@@ -21,7 +21,8 @@ class Range {
       let to = this.to;
   
       return {
-        next() {
+        // Fat arrow function will allow the use of this keyword pointing to the object
+        next : ()=>{
           if (next <= to) {
             this.#Array.push(next);
             return { value: next++, done: false };
